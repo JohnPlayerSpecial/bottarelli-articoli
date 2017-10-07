@@ -88,6 +88,7 @@ def getArticles( bot, job ):
 def start( bot, update ):
 	bot.sendMessage(chat_id = update.message.chat_id, text = "Successfully subscribed.")
 
+init_DB()
 updater = Updater(TOKEN_TELEGRAM) 
 dp = updater.dispatcher
 updater.dispatcher.add_handler(CommandHandler('start', start))

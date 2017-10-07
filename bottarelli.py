@@ -17,6 +17,7 @@ from telegraphapi import Telegraph
 from newspaper import Article
 from urllib.request import urlopen 
 
+
 STRING_DB = os.environ['DATABASE_URL'].replace("postgres","pq")
 API_KEY_MERCURY_PARSER = os.environ['API_KEY_MERCURY_PARSER']  
 TOKEN_TELEGRAM = os.environ['TOKEN_TELEGRAM'] 

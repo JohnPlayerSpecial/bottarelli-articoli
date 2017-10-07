@@ -43,7 +43,7 @@ def getArticles( bot, job ):
 	ps = db.prepare("SELECT * FROM url;")
 	allUrl = [ item[1] for item in ps() ]
 	entries = feedparser.parse( feed ).entries
-	for post in entries:
+	for post in reversed(entries):
 		if post.link not in allUrl:
 			try:
 				ps = db.prepare("INSERT INTO url (url) VALUES ('{}') ON CONFLICT (url) DO NOTHING;".format(post.link) )

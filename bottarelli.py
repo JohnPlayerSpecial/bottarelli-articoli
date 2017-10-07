@@ -1,6 +1,5 @@
 #http://www.ilsussidiario.net/Feed/autore/230/Mauro-Bottarelli/
 from bs4 import BeautifulSoup
-from tqdm import tqdm
 from newspaper import Article
 import feedparser
 from telegraphapi import Telegraph
@@ -29,7 +28,6 @@ telegraph = Telegraph()
 telegraph.createAccount('TELEGRAPH_ACCOUNT')
 
 def getArticles( bot, job ):
-	print("ecco")
 	entries = feedparser.parse( feed ).entries
 	for post in tqdm(entries):
 		try:
